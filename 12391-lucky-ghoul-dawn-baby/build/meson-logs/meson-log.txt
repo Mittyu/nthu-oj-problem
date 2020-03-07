@@ -1,0 +1,10 @@
+Build started at 2019-12-20T16:29:17.459963
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.51.2
+Source dir: /home/hanson/Desktop/Grade2Courses/code/12391-lucky-ghoul-dawn-baby
+Build dir: /home/hanson/Desktop/Grade2Courses/code/12391-lucky-ghoul-dawn-baby/build
+Build type: native build
+
+ERROR: No statements in code.

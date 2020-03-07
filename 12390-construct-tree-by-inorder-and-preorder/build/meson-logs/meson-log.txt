@@ -1,0 +1,10 @@
+Build started at 2019-12-20T00:40:10.657781
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.51.2
+Source dir: /home/hanson/Desktop/Grade2Courses/code/12390-construct-tree-by-inorder-and-preorder
+Build dir: /home/hanson/Desktop/Grade2Courses/code/12390-construct-tree-by-inorder-and-preorder/build
+Build type: native build
+
+ERROR: No statements in code.

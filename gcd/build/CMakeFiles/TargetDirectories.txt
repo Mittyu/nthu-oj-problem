@@ -1,0 +1,3 @@
+/home/hanson/Desktop/Grade2Courses/code/gcd/build/CMakeFiles/rebuild_cache.dir
+/home/hanson/Desktop/Grade2Courses/code/gcd/build/CMakeFiles/gcd.dir
+/home/hanson/Desktop/Grade2Courses/code/gcd/build/CMakeFiles/edit_cache.dir

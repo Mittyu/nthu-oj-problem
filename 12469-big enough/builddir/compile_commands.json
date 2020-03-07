@@ -1,0 +1,8 @@
+[
+  {
+    "directory": "/home/hanson/Desktop/Grade2Courses/code/12469-big enough/builddir",
+    "command": "c++ -Idemo@exe -I. -I.. -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'demo@exe/12469.cpp.o' -MF 'demo@exe/12469.cpp.o.d' -o 'demo@exe/12469.cpp.o' -c ../12469.cpp",
+    "file": "../12469.cpp",
+    "output": "demo@exe/12469.cpp.o"
+  }
+]

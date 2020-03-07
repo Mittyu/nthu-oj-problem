@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://acm.cs.nthu.edu.tw/contest/1762/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+<title>1762 - I2P(II) 2019_Fall_Chen_hw2</title>
+
+    <!-- bootstrap, bootwatch CSS -->
+    
+    <link rel="stylesheet" href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/bootstrap.min.css">
+    
+    <!-- Magnific Popup core CSS -->
+    <link rel="stylesheet" href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/magnific-popup.css">
+    <link rel="stylesheet" href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/index.css" media="screen">
+    <link rel="stylesheet" href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/mfp-fade.css" media="screen">
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/jquery.min.js"></script>
+  </head>
+  <body onload="getRestTime()">
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse newbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://acm.cs.nthu.edu.tw/">NTHU Online Judge</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="nav-text"><a href="https://acm.cs.nthu.edu.tw/contest/">Contest</a></li>
+            <li class="nav-text"><a href="https://acm.cs.nthu.edu.tw/problem/">Problem</a></li>
+            <li class="nav-text"><a href="https://acm.cs.nthu.edu.tw/users/submit/">Submit</a></li>
+            <li class="nav-text"><a href="https://acm.cs.nthu.edu.tw/status/?username=">Status</a></li>
+            <!--li class="nav-text"><a href="/group/list/">Group</a></li-->
+            <!--
+            <li class="dropdown nav-text">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                 role="button" aria-expanded="false">User
+                 <span class="caret"></span>
+               </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">User List</a></li>
+                <li><a href="#">User Rank</a></li>
+              </ul>
+            </li>
+            -->
+            <li class="nav-text">
+              <form class="navbar-form">
+                <div class="form-group">
+                  <input id="globalNavigation" type="text" class="form-control" placeholder="Search Site" autocomplete="off">
+                </div>
+              </form>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="nav-text-auth"><a href="https://acm.cs.nthu.edu.tw/users/login/?next=/contest/1762/">Login</a></li>
+            <li class="nav-text-auth"><a href="https://acm.cs.nthu.edu.tw/users/create/">Register</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- wrap all page elements to div -->
+    <div class="wrap-body container-fluid">
+      
+
+      
+
+
+  <div class="container">
+
+    <!--Title-->
+    <div class="well">
+      <h2>1762 - I2P(II) 2019_Fall_Chen_hw2
+        <a class="btn btn-info" href="https://acm.cs.nthu.edu.tw/contest/scoreboard/1762/">Scoreboard</a>
+        
+        
+      </h2>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h1 class="panel-title" style="text-align:center;">Time</h1>
+      </div>
+      <div class="panel-body inline">
+        <table style="width:100%;text-align:center;">
+          <tbody><tr>
+            <td id="start" style="text-align:left;">2019/10/01 06:30:00</td>
+            <td id="clock">Contest Ended</td>
+            <td id="end" style="text-align:right;">2019/10/17 06:30:00</td>
+          </tr>
+        </tbody></table>
+      </div>
+      <div class="progress" style="margin-left: 5%; width: 90%; overflow: inherit;">
+        <div id="timeline" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </div>
+    <!-- Clarification -->
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h1 class="panel-title" style="text-align:center;">Clarification</h1>
+      </div>
+      <div id="contest_clarification">
+        <table class="table" style="table-layout: fixed; width: 100%">
+          <thead>
+            <tr>
+              
+              <th width="2%">#</th>
+              <th width="15%">Problem</th>
+              <th width="10%">Asker</th>
+              <th width="20%">Description</th>
+              <th width="20%">Reply</th>
+              <th width="10%">Replier</th>
+              <th width="10%">Reply Time</th>
+              <th width="10%">For all team</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+
+        <div align="center">
+          
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!--Contest detail-->
+    <div id="detail">
+      <ul class="nav nav-tabs" role="tablist" id="contest_tab">
+        <li class="" role="presentation">
+          <a href="https://acm.cs.nthu.edu.tw/contest/1762/#overview" role="tab" data-toggle="tab" aria-expanded="false">Overview</a>
+        </li>
+        <li class="dropdown active" role="presentation">
+          <a href="https://acm.cs.nthu.edu.tw/contest/1762/#problem" class="dropdown-toggle" data-toggle="dropdown">
+            Problem<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+            <li role="presentation" class="">
+              <a href="https://acm.cs.nthu.edu.tw/contest/1762/#problem12390" tabindex="-1" role="tab" data-toggle="tab" aria-expanded="false">Construct tree by inorder and preorder</a>
+            </li>
+            
+            <li role="presentation" class="active">
+              <a href="https://acm.cs.nthu.edu.tw/contest/1762/#problem12391" tabindex="-1" role="tab" data-toggle="tab" aria-expanded="true">Lucky Ghoul Dawn baby</a>
+            </li>
+            
+          </ul>
+        </li>
+      </ul>
+      <div class="tab-content" id="content">
+        <div class="tab-pane" id="overview">
+            
+<link href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/overview.css" rel="stylesheet">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Problem</th>
+      <th>Pass Rate (passed user / total user)</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>12390</td>
+      <td>
+        <a href="https://acm.cs.nthu.edu.tw/contest/1762/#problem12390" class="overview_problem" tabindex="-1" role="tab" data-toggle="tab" aria-expanded="false">Construct tree by inorder and preorder</a>
+      </td>
+      <td>
+        
+        <div class="progress" style="overflow: inherit;">
+          <div class="progress-bar progress-bar-success" style="width: %;" data-toggle="tooltip" data-placement="top" title="" data-original-title="%">
+          </div>
+          <div class="progress-bar progress-bar-danger" style="width: %;" data-toggle="tooltip" data-placement="top" title="" data-original-title="%">
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>12391</td>
+      <td>
+        <a href="https://acm.cs.nthu.edu.tw/contest/1762/#problem12391" class="overview_problem" tabindex="-1" role="tab" data-toggle="tab" aria-expanded="false">Lucky Ghoul Dawn baby</a>
+      </td>
+      <td>
+        
+        <div class="progress" style="overflow: inherit;">
+          <div class="progress-bar progress-bar-success" style="width: %;" data-toggle="tooltip" data-placement="top" title="" data-original-title="%">
+          </div>
+          <div class="progress-bar progress-bar-danger" style="width: %;" data-toggle="tooltip" data-placement="top" title="" data-original-title="%">
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+        </div>
+        
+        <div class="tab-pane" id="problem12390">
+          
+<div class="pname_block panel">
+  <div class="left">
+    <div class="pname">
+      <h2>12390 - Construct tree by inorder and preorder &nbsp;&nbsp;
+        
+      </h2>
+    </div>
+  </div>
+  <div class="right">
+    <div class="problem-option">
+      <a href="https://acm.cs.nthu.edu.tw/status/?pid=12390">Status</a> &nbsp;|&nbsp;
+      <!-- <a>Printable </a> &nbsp;|&nbsp; -->
+      <!-- <a>Rank</a> &nbsp;|&nbsp; -->
+      <a data-toggle="modal" data-target="#limit_12390">Limits</a>
+      
+        <a class="btn btn-primary" href="https://acm.cs.nthu.edu.tw/users/submit/12390">Submit</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="limit_12390">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">Limits</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td></td>
+              <th>Time</th>
+              <th>Memory</th>
+              
+              </tr><tr>
+                <th>Case 1</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 2</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 3</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 4</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 5</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 6</th>
+                <td>1 sec</td>
+                <td>5 MB</td>
+              </tr>
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width:75%; float:left">
+  <h3>Description</h3>
+  <p><span style="font-size:20px"><strong>This problem is partial judge!</strong></span></p>
+
+<p><span style="font-size:20px">We will give you the "inorder" and "preorder" of a tree.</span></p>
+
+<p><span style="font-size:20px">You need to construct a tree by the "inorder" and "preorder" we give you and print the "postorder".</span></p>
+
+<p><span style="font-size:20px">There are three function you need to complete.</span></p>
+
+<p><span style="font-size:20px"><code>Node* buildTree(int *inorder, int *preorder, int *inorder_start, int inorder_end*);</code></span></p>
+
+<blockquote>
+<p><span style="font-size:20px">function to construct the tree.</span></p>
+</blockquote>
+
+<p><span style="font-size:20px"><code>void showPostorder(Node *root)</code></span></p>
+
+<blockquote>
+<p><span style="font-size:20px">function to print the postorder</span></p>
+</blockquote>
+
+<p><span style="font-size:20px"><code>void freeTree(Node *root)</code></span></p>
+
+<blockquote>
+<p><span style="font-size:20px">function to free the tree</span></p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><span style="color:#FF0000"><span style="font-size:20px">Notice that the the final testcase has small memory limit. If you don't free your tree you will get <code>memory limit exceeded</code></span></span></p>
+
+<div>&nbsp;</div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:20px"><strong><img alt="" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/32835611_1656109271125499_5752957295394816000_n.jpg" style="height:429px; width:500px"></strong></span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:20px"><img alt="" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/1.PNG" style="height:323px; width:500px"></span></p>
+
+<p><span style="font-size:20px">(The tree for sample input 1)</span></p>
+
+<p><span style="font-size:20px"><img alt="" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/2.PNG" style="height:168px; width:500px"></span></p>
+
+<p><span style="font-size:20px">(</span><span style="font-size:20px">The tree for sample input 2)</span></p>
+
+  <h3>Input</h3>
+  <p>&nbsp;</p>
+
+<p><span style="font-size:20px">There are multiple testcases. The testcases will end with <strong>EOF</strong>.</span></p>
+
+<p><span style="font-size:20px">Each testcase contains three lines.</span></p>
+
+<p><span style="font-size:20px">First line only contains one integer <strong>n(1 &lt;= n &lt;= 100)</strong> which means the number of nodes in the tree.</span></p>
+
+<p><span style="font-size:20px">Second line contains <strong>n</strong> integers which in the range of <code>int</code>. Standing for the "inorder".</span></p>
+
+<p><span style="font-size:20px">Third line contains <strong>n</strong> integers which in the range of <code>int</code>. Standing for the "preorder".</span></p>
+
+<p><span style="font-size:20px">It is guarnteed that no same number will appear in one tree.</span></p>
+
+<div>&nbsp;</div>
+
+  <h3>Output</h3>
+  <p><span style="font-size:20px">For each testcase output the "postorder" of the tree.</span></p>
+
+<p><span style="font-size:20px">You have to output in this form:</span></p>
+
+<p><span style="font-size:20px"><code>testcase&lt;id&gt;: &lt;postorder sequence&gt;</code></span></p>
+
+<p><span style="font-size:20px">Replace&nbsp;</span><span style="font-family:monospace; font-size:20px">&lt;id&gt;</span><span style="font-size:20px"> and&nbsp;</span><span style="font-family:monospace; font-size:20px">&lt;postorder sequence&gt;</span><span style="font-size:20px">&nbsp;into the i-th testcase and the correct postorder sequence.</span></p>
+
+<p><span style="font-size:20px"><strong>Each number in postorder sequence should be followed by a single blank(even the last number).</strong></span></p>
+
+<p><span style="font-size:20px">If you have further questions, please refer to sample output.</span></p>
+
+  <h3>Sample Input&nbsp;&nbsp;<a class="btn btn-primary downloadSampleInputButton" pid="12390" href="data:text/plain;charset=utf-8,9%0A1%202%203%204%205%206%207%208%209%0A5%203%202%201%204%207%206%208%209%0A9%0A3%207%208%206%2011%202%205%204%209%0A2%207%203%206%208%2011%205%209%204%0A" download="12390_sampleIn">Download</a></h3>
+  <div class="panel-body">
+    <textarea id="12390_sampleIn" class="panel-body sampleIO" readonly="" style="height: 164px;">9
+1 2 3 4 5 6 7 8 9
+5 3 2 1 4 7 6 8 9
+9
+3 7 8 6 11 2 5 4 9
+2 7 3 6 8 11 5 9 4
+</textarea>
+  </div>
+  <h3>Sample Output&nbsp;&nbsp;<a class="btn btn-primary downloadSampleOutputButton" pid="12390" href="data:text/plain;charset=utf-8,testcase1%3A%201%202%204%203%206%209%208%207%205%20%0Atestcase2%3A%203%208%2011%206%207%204%209%205%202%20%0A" download="12390_sampleOut">Download</a></h3>
+  <div class="panel-body">
+    <textarea id="12390_sampleOut" class="panel-body sampleIO" readonly="" style="height: 87px;">testcase1: 1 2 4 3 6 9 8 7 5 
+testcase2: 3 8 11 6 7 4 9 5 2 
+</textarea>
+  </div>
+  
+    <h3>Partial Judge Code</h3>
+    <a href="https://acm.cs.nthu.edu.tw/problem/partial/12390.c/">12390.c</a>
+  
+  
+    <h3>Partial Judge Header</h3>
+    <a href="https://acm.cs.nthu.edu.tw/problem/partial/12390.h/">12390.h</a>
+  
+  
+  <h3>Tags</h3>
+    <div id="tags" style="float:left;width:60%">
+      
+        
+      
+    </div>
+    
+  
+
+  <br>
+  <br>
+  <br>
+  <h4>
+    <a onclick="alert(&#39;Discuss not open yet&#39;)">Discuss</a>
+  </h4>
+  <br>
+  <br>
+  <br>
+</div>
+<script>
+var pid = 12390;
+</script>
+<script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/problem.js"></script>
+
+
+        </div>
+        
+        <div class="tab-pane active" id="problem12391">
+          
+<div class="pname_block panel">
+  <div class="left">
+    <div class="pname">
+      <h2>12391 - Lucky Ghoul Dawn baby &nbsp;&nbsp;
+        
+      </h2>
+    </div>
+  </div>
+  <div class="right">
+    <div class="problem-option">
+      <a href="https://acm.cs.nthu.edu.tw/status/?pid=12391">Status</a> &nbsp;|&nbsp;
+      <!-- <a>Printable </a> &nbsp;|&nbsp; -->
+      <!-- <a>Rank</a> &nbsp;|&nbsp; -->
+      <a data-toggle="modal" data-target="#limit_12391">Limits</a>
+      
+        <a class="btn btn-primary" href="https://acm.cs.nthu.edu.tw/users/submit/12391">Submit</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="limit_12391">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">Limits</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td></td>
+              <th>Time</th>
+              <th>Memory</th>
+              
+              </tr><tr>
+                <th>Case 1</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 2</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 3</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 4</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 5</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 6</th>
+                <td>2 sec</td>
+                <td>80 MB</td>
+              </tr>
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width:75%; float:left">
+  <h3>Description</h3>
+  <p>&nbsp;</p>
+
+<p><span style="font-size:20px">A famous streamer once said: "I will definitely hit you! I will definitely break your bridge!". The streamer asked you to remember those who annoyed him. They are represented as numbers. When the streamer ask you, you should answer the position of the one the streamer wants to hit.</span></p>
+
+<hr>
+<p><span style="font-size:20px">You will got <strong>n</strong> numbers in<span style="color:#FF0000"> <strong>increasing order</strong></span> and <strong>q</strong> for the number of queries.</span></p>
+
+<p><span style="font-size:20px">Suppose the <strong>n</strong> numbers are stored in an array whose <strong>index start from 1</strong>.</span></p>
+
+<p><span style="font-size:20px">Each query will give you an integer <strong>a<sub>i</sub></strong> , then you need to answer the position of <strong>a<sub>i</sub></strong> in the array.</span></p>
+
+<p><span style="font-size:20px">If you can't find the number in the array, you need to output "Break your bridge!".</span></p>
+
+<p><span style="font-size:20px"><strong>example:</strong></span></p>
+
+<pre><span style="font-size:20px"><code>6 3 // n = 6, q = 3
+4 7 9 20 31 34 // n numbers
+4 // answer the position of 4
+1 // answer the position of 1
+20 // answer the position of 20
+</code></span></pre>
+
+<p><span style="font-size:20px">In this example you can find "4" in the first place, therefore you should answer "1".</span></p>
+
+<p><span style="font-size:20px">You can't find "1" in the array, therefore you should answer "Break your bridge!".</span></p>
+
+<p><span style="font-size:20px">You can find "20" in the forth place, therefore you should answer "4".</span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:20px">You can use the following sample code to solve the problem. It's better you write your own code:</span></p>
+
+<pre><span style="font-size:20px"><code>typedef struct _NODE {
+	int num, id;
+	struct _NODE *left, *right;
+} Node;
+void build_tree(Node **now, Num *arr, int l, int r) {
+	if(l&gt;r) return;
+	(*now) = (Node*)malloc(sizeof(Node));
+	if(l==r) {
+		/*do it your self*/
+	}
+	else {
+		/*do it your self*/
+	}
+}
+int search(Node *now, int x) {
+    if(now==NULL) return 0;
+	/*do it your self*/
+}
+void insert(Node **root, int x) {
+	/*do it your self*/
+}
+void freeBST(Node *root){
+    if(root == NULL) return;
+	/*do it your self*/
+}
+</code></span></pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:20px"><img alt="" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/46494372_2272214496392960_1507291817316450304_n.png" style="height:379px; width:700px"></span></p>
+
+  <h3>Input</h3>
+  <p><span style="font-size:20px">Input end with <strong>EOF</strong>.</span></p>
+
+<p><span style="font-size:20px">Each testcase contains several lines.</span></p>
+
+<p><span style="font-size:20px">First line contains two integer <strong>n(1&lt;= n &lt;= 2*10<sup>6</sup>) and q(1&lt;= q&lt;= 2*10<sup>6</sup>)</strong></span></p>
+
+<p><span style="font-size:20px">Second line contains <strong>n</strong> integer. Each integer range in 1~1000000000</span></p>
+
+<p><span style="font-size:20px">The following are <strong>q</strong> lines. Each line contains one integer <strong>a<sub>i</sub>(1&lt;= a<sub>i</sub> &lt;= 10<sup>9</sup>)</strong></span></p>
+
+<p>&nbsp;</p>
+
+  <h3>Output</h3>
+  <p><span style="font-size:20px">For each query print the position of <strong>a<sub>i</sub></strong>.</span></p>
+
+<p><span style="font-size:20px">If you can't find <strong>a<sub>i</sub></strong> in the array, print "Break your bridge!"</span></p>
+
+<p><span style="font-size:20px">Remember to print <strong>\n</strong> at the end of each output.</span></p>
+
+  <h3>Sample Input&nbsp;&nbsp;<a class="btn btn-primary downloadSampleInputButton" pid="12391" href="data:text/plain;charset=utf-8,10%205%0A4%207%209%2020%2031%2046%2050%2056%2076%2096%0A19%0A50%0A96%0A7%0A100%0A6%203%0A4%207%209%2020%2031%2034%0A4%0A1%0A20%0A" download="12391_sampleIn">Download</a></h3>
+  <div class="panel-body">
+    <textarea id="12391_sampleIn" class="panel-body sampleIO" readonly="" style="height: 279px;">10 5
+4 7 9 20 31 46 50 56 76 96
+19
+50
+96
+7
+100
+6 3
+4 7 9 20 31 34
+4
+1
+20
+</textarea>
+  </div>
+  <h3>Sample Output&nbsp;&nbsp;<a class="btn btn-primary downloadSampleOutputButton" pid="12391" href="data:text/plain;charset=utf-8,Break%20your%20bridge!%0A7%0A10%0A2%0ABreak%20your%20bridge!%0A1%0ABreak%20your%20bridge!%0A4%0A" download="12391_sampleOut">Download</a></h3>
+  <div class="panel-body">
+    <textarea id="12391_sampleOut" class="panel-body sampleIO" readonly="" style="height: 202px;">Break your bridge!
+7
+10
+2
+Break your bridge!
+1
+Break your bridge!
+4
+</textarea>
+  </div>
+  
+  
+  
+  <h3>Tags</h3>
+    <div id="tags" style="float:left;width:60%">
+      
+        
+      
+    </div>
+    
+  
+
+  <br>
+  <br>
+  <br>
+  <h4>
+    <a onclick="alert(&#39;Discuss not open yet&#39;)">Discuss</a>
+  </h4>
+  <br>
+  <br>
+  <br>
+</div>
+<script>
+var pid = 12391;
+</script>
+<script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/problem.js"></script>
+
+
+        </div>
+        
+        <!-- <div class="tab-pane" id="scoreboard">
+        </div> -->
+      </div>
+    </div>
+    
+    
+  </div>
+
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="navbar navbar-inverse navbar-fixed-bottom sticky-footer container-fluid">
+        <div class="navbar-collapse collapse">
+          <p class="navbar-text col-lg-4">Contact us: nthucsoj@gmail.com</p>
+          <p class="navbar-text col-lg-6">© NTHU Online Judge 2015, Templates are from Bootswatch Project</p>
+          <p id="time" class="navbar-text">2019/12/20 16:26:14</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/bootstrap.min.js"></script>
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/function.js"></script>
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/jquery.magnific-popup.min.js"></script>
+    
+
+<script type="text/javascript">
+jQuery(function($) {
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    }
+});
+});
+</script>
+
+
+<script type="text/javascript" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/django_admin.js"></script>
+<script type="text/javascript" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/autocomplete.js"></script>
+<script type="text/javascript" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/widget.js"></script>
+<script type="text/javascript" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/addanother.js"></script>
+<script type="text/javascript" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/text_widget.js"></script>
+<script type="text/javascript" src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/remote.js"></script>
+<link rel="stylesheet" type="text/css" href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/style.css">
+
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/popup-setting.js"></script>
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/base.js"></script>
+    <script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/clock.js"></script>
+    
+<link href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/contest.css" rel="stylesheet">
+<link href="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/problem.css" rel="stylesheet">
+<script src="./1762 - I2P(II) 2019_Fall_Chen_hw2_files/contest.js"></script>
+
+  
+
+</body></html>

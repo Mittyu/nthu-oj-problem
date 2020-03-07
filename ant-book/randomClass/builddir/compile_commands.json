@@ -1,0 +1,8 @@
+[
+  {
+    "directory": "/home/hanson/Desktop/Grade2Courses/code/ant-book/randomClass/builddir",
+    "command": "c++ -Idemo@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'demo@exe/main.cc.o' -MF 'demo@exe/main.cc.o.d' -o 'demo@exe/main.cc.o' -c ../main.cc",
+    "file": "../main.cc",
+    "output": "demo@exe/main.cc.o"
+  }
+]

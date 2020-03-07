@@ -1,0 +1,8 @@
+[
+  {
+    "directory": "/home/hanson/Desktop/Grade2Courses/code/builddir",
+    "command": "c++ -Ihello@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'hello@exe/hello.cc.o' -MF 'hello@exe/hello.cc.o.d' -o 'hello@exe/hello.cc.o' -c ../hello.cc",
+    "file": "../hello.cc",
+    "output": "hello@exe/hello.cc.o"
+  }
+]
