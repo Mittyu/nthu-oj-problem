@@ -5,11 +5,16 @@
             "includePath": [
                 "D:/LLVM/x86_64-w64-mingw32/include"
             ],
-            "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "clang-x64",
+            "compileCommands": "${workspaceFolder}/12301-uncleHuangChooseTutor/builddir/compile_commands.json"
         }
     ],
     "version": 4
