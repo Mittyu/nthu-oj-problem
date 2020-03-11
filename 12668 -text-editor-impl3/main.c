@@ -1,4 +1,4 @@
-#define MAX 110
+#define MAX 1000000
 #include<stdio.h>
 #include<stdlib.h>
 

@@ -1,16 +1,15 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "D:/LLVM/x86_64-w64-mingw32/include"
             ],
-            "defines": [],
+            "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64",
-            "compileCommands": "${workspaceFolder}/12390-construct-tree-by-inorder-and-preorder/builddir/compile_commands.json"
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
