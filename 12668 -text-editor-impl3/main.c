@@ -1,4 +1,4 @@
-#define MAX 1000000
+#define MAX 2000000
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -8,69 +8,22 @@ typedef struct _node{
     char c;
     struct _node *next, *prev;
 } node;
-void traversal(node *head, node *rear, int role){
-    node *cur;
-    if(role == HEAD){
-        cur = head->next;
-        while(cur != rear){
-            printf("%c", cur->c);
-            cur = cur->next;
-        }
-    }else{
-        cur = rear->prev;
-        while(cur != head){
-            printf("%c", cur->c);
-            cur = cur->prev;
-        }
-    }
-    printf("\n");
-}
-void insert_before(node **cur, char ch){
-    node *newNode = (node*)malloc(sizeof(node));
-    newNode->c = ch;
-
-    newNode->next = *cur;
-    newNode->prev = (*cur)->prev;
-
-    (*cur)->prev->next = newNode;
-    (*cur)->prev = newNode;
-}
-void delete_before(node **cur){
-    node *dNode = (*cur)->prev;
-
-    dNode->prev->next = *cur;
-    (*cur)->prev = dNode->prev;
-
-    free(dNode);
-}
-void init_list(node **head, node **rear){
-    // __init__ : head & rear dummy objects
-    *head =  (node*)malloc(sizeof(node));
-    *rear =  (node*)malloc(sizeof(node));
-    (*head)->c = HEAD;
-    (*rear)->c = REAR;
-    (*head)->next = (*rear);
-    (*rear)->prev = (*head);
-    (*head)->prev = (*rear)->next = NULL;
-}
-void free_list(node **head, node **rear){
-    node *cur = *rear;
-    while(cur->prev != *head){
-        delete_before(&cur);
-    }
-    free(*head);
-    free(*rear);
-}
 int main(){
     int t, n, i;
     // using implement 2, dummy head and rear.
-    node *head, *rear, *cur;
+    node *head, *rear, *cur, *delete_node, *new_node;
     char *text = (char*)malloc(sizeof(char));
     scanf(" %d", &t);
 
     while(t--){
         scanf(" %d %s", &n, text);
-        init_list(&head, &rear);
+        // init_list(head, rear)
+        head = (node*)malloc(sizeof(node));
+        rear = (node*)malloc(sizeof(node));
+        head->c = HEAD, rear->c = REAR;
+        head->prev = rear->next = NULL;
+        head->next = rear, rear->prev = head;
+
         cur = rear;
         for(i=0; i<n; i++){
             if(text[i] == 'L'){
@@ -80,13 +33,51 @@ int main(){
                 if(cur->next != NULL)
                     cur = cur->next;
             }else if(text[i] == 'B'){
-                delete_before(&cur);
+                // delete_before
+                if(cur->prev == head || cur->prev == NULL) break;
+                delete_node = cur->prev;
+                delete_node->prev->next = cur;
+                cur->prev = delete_node->prev;
+
+                free(delete_node);
             }else{
-                insert_before(&cur, text[i]);
+                // insert_before
+                if(cur->prev == NULL) break;
+                new_node = (node*)malloc(sizeof(node));
+                new_node->c = text[i];
+                new_node->next = cur;
+                new_node->prev = cur->prev;
+
+                cur->prev->next = new_node;
+                cur->prev = new_node;
             }
         }
-        traversal(head, rear, HEAD);
-        free_list(&head, &rear);
+        // traversal
+        cur = head->next;
+        while(cur != rear){
+            printf("%c", cur->c);
+            cur = cur->next;
+        }
+        printf("\n");
+        // // back traversal
+        // cur = rear->prev;
+        // while(cur != head){
+        //     printf("%c", cur->c);
+        //     cur = cur->prev;
+        // }
+        // printf("\n");
+        // free list
+        cur = rear;
+        while(cur->prev != head){
+            delete_node = cur->prev;
+            
+            delete_node->prev->next = cur;
+            cur->prev = delete_node->prev;
+
+            free(delete_node);
+        }
+        free(head);
+        free(rear);
     }
 
 
@@ -100,5 +91,12 @@ aaaaaaLLLbbbBRc
 16
 aLRLRLRLRLRLRLRz
 
+3
+15
+aaaLLLbbbRRRccc
+15
+abcdefghijklmno
+16
+aLRLRLRLRLRLRLRz
 
 */
