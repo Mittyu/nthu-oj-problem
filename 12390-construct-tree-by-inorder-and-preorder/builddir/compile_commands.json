@@ -1,8 +1,0 @@
-[
-  {
-    "directory": "/home/hanson/Desktop/Grade2Courses/code/12390-construct-tree-by-inorder-and-preorder/builddir",
-    "command": "cc -Idemo@exe -I. -I.. -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'demo@exe/12390.c.o' -MF 'demo@exe/12390.c.o.d' -o 'demo@exe/12390.c.o' -c ../12390.c",
-    "file": "../12390.c",
-    "output": "demo@exe/12390.c.o"
-  }
-]
