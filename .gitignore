@@ -52,5 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Meson build
-.build
-/builddir
+*.build
+*/builddir
