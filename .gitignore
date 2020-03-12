@@ -54,3 +54,4 @@ dkms.conf
 # Meson build
 *.build
 */builddir
+*/build
