@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/gcd.dir/gcd.cc.o  -o gcd 
