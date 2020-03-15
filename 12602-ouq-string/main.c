@@ -1,26 +1,9 @@
-#define MAX 1000
+#define MAX 200
 #include<stdlib.h>
 #include<stdio.h>
-#include<string.h>
-char* ouq(int times){
-    char* r;
-    char* o = "O", *u = "U", *q = "Q";
-    char* s = (char*)malloc(sizeof(char)*MAX);
-    if(times==1){
-        strcpy(s, o);
-        strcat(s, u);
-        strcat(s, q);
-    }else{
-        r = ouq(times-1);
-        strcpy(s, o);
-        strcat(s, r);
-        strcat(s, u);
-        strcat(s, r);
-        strcat(s, q);
-    }
-    return s;
-}
-
+typedef struct _node{
+    char *node[5];
+}node;
 int main(){
     char* string;
     int n, times, l, r;

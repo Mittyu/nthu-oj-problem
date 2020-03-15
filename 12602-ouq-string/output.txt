@@ -1,0 +1,28 @@
+   |O   Q|  Q   Q   Q   u   O   O   O|   O    Q|   Q   Q   Q   u   O   O   O|   O    Q
+   |0 188|189 190 191 192 193 194 195| 196  384| 385 386 387 388 389 390 391| 392  580
+
+    // prev_up = down-1-(k-6)-1-(k-6);
+    // prev_down = prev_up-base_lenth+1;
+    // next_down = up+1+(k-6)+1+(k-6);
+    // next_up = next_down+base_lenth-1;
+
+    // 9 0 30
+    // python: ooooooooouquouqquoouquouqqquooo
+    // this_f: OOOOOOOOOuQuOuQQuOOuQuOuQQQuOOO
+
+
+10 30 130
+this_OOuQuOuQQuOOuQuOuQQQQuOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQQuOOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOu
+pyth_oouquouqquoouquouqqqquoooouquouqquoouquouqqquooouquouqquoouquouqqqqquooooouquouqquoouquouqqquooouquou
+25 250 350
+this_OuQQQQuOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQQuOOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQu
+pyth_ouqqqquoooouquouqquoouquouqqquooouquouqquoouquouqqqqquooooouquouqquoouquouqqquooouquouqquoouquouqqqqu
+15 80 180
+this_OOOuQuOuQQuOOuQuOuQQQQQuOOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQuOOOOuQuOuQQuOOuQuOuQQQuOOOuQuO
+pyth_ooouquouqquoouquouqqqqquooooouquouqquoouquouqqquooouquouqquoouquouqqqquoooouquouqquoouquouqqquooouquo
+15 0 100
+this_OOOOOOOOOOOOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQuOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQ
+pyth_ooooooooooooooouquouqquoouquouqqquooouquouqquoouquouqqqquoooouquouqquoouquouqqquooouquouqquoouquouqqq
+10 2968 3068
+this_QQuOOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQuOOOOuQuOuQQuOOuQuOuQQQuOOOuQuOuQQuOOuQuOuQQQQQQQQQQ
+pyth_qquooooouquouqquoouquouqqquooouquouqquoouquouqqqquoooouquouqquoouquouqqquooouquouqquoouquouqqqqqqqqqq
