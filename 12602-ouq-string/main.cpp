@@ -81,7 +81,7 @@ int main(){
 /*
 [base]qqq..qquooo..oo[base]qqq..qquooo..oo[base]
   189+ (k-6)+1+(k-6)+ 189 +(k-6) +1+(k-6) +189 = 189*3+2+4k-24 = 573 (k=7)
-
-
-
+1. find [x] u [x], where is l and r.
+2. classify is front of x or back of x, and at begin or the end.
+3. using the upper method to figure out s[l:r+1]
 */
