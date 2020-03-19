@@ -57,3 +57,7 @@ dkms.conf
 */builddir
 */build
 
+# I/O file
+*.txt
+*/*.txt
+
