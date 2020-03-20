@@ -1,8 +1,0 @@
-[
-  {
-    "directory": "/home/hanson/Desktop/Grade2Courses/code/ant-book/rand/builddir",
-    "command": "c++ -Idemo@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'demo@exe/rand.cc.o' -MF 'demo@exe/rand.cc.o.d' -o 'demo@exe/rand.cc.o' -c ../rand.cc",
-    "file": "../rand.cc",
-    "output": "demo@exe/rand.cc.o"
-  }
-]
