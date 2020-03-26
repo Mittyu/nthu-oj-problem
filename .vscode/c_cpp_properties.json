@@ -2,9 +2,6 @@
     "configurations": [
         {
             "name": "Win32",
-            "includePath": [
-                "D:/LLVM/x86_64-w64-mingw32/include"
-            ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
