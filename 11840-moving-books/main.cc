@@ -8,6 +8,7 @@ int main() {
   freopen("output.txt", "w", stdout);
 #endif
   int n, i, a, b;
+  /*-----hash table to store table idx-----*/
   int* table_idx = new int[MAX];
 
   string config;
@@ -19,7 +20,6 @@ int main() {
     tables[i].push_back(i);
     table_idx[i] = i;
   }
-  // eat configurations
   while (1) {
     cin >> config;
     if (config == "move") {
