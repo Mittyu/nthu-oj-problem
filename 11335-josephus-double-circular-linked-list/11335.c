@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#ifdef ONLINE_JUDGE
 #include "function.h"
-
+#endif
+#ifndef ONLINE_JUDGE
+#include "11335.h"
+#endif
 // void traversal(){
 //     Node *cur = head;
 //     while(cur->next != head){
@@ -44,10 +47,12 @@ Node *createList(int n) {
 }
 
 void freeList() {
-  Node *cur = head;
+  Node *cur, *delete_node;
+  cur = head, delete_node = NULL;
   while (cur->next != head) {
+    delete_node = cur->next;
     cur->next = cur->next->next;
-    free(cur);
+    free(delete_node);
   }
   free(head);
   // printf("delete all elements\n");
