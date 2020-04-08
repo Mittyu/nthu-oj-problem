@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#ifdef ONLINE_JUDGE
 #include "function.h"
-#endif
-#ifndef ONLINE_JUDGE
-#include "12680.h"
-#endif
 int main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);

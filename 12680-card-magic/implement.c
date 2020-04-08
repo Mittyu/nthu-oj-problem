@@ -1,19 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#ifndef ONLINE_JUDGE
-#include "12680.h"
-#endif
-#ifdef ONLINE_JUDGE
 #include "function.h"
-#endif
 
 Node* ReadOneList() {
   int n, i;
   scanf(" %d", &n);
   Node* new_head = (Node*)malloc(sizeof(Node));
   int* data = (int*)malloc(sizeof(int) * n);
-  /*-----get out ":"----*/
-  getchar();
+
+  getchar(); // get out ':'
   for (i = 0; i < n; i++) scanf(" %d", &data[i]);
   new_head->size = n;
   new_head->data = data;
@@ -34,6 +29,8 @@ void Merge(Node* dummy_head, int x, int y) {
   // y is base
   if (x == y) return;
   int i, j;
+
+  /*---find stack x, y---*/
   Node* stack_x = NULL;
   Node* stack_y = NULL;
   Node* cur = dummy_head->next;
@@ -46,12 +43,14 @@ void Merge(Node* dummy_head, int x, int y) {
   }
   if (stack_x == NULL || stack_y == NULL) return;
 
+  /*---merge data from both---*/
   int total_size = stack_x->size + stack_y->size;
   int* data = (int*)malloc(sizeof(int) * (total_size));
   for (i = 0; i < stack_y->size; i++) data[i] = stack_y->data[i];
   for (j = 0; j < stack_x->size; j++, i++) data[i] = stack_x->data[j];
   stack_y->data = data;
   stack_y->size = total_size;
+  /*---delete stack_x---*/
   pre_x->next = stack_x->next;
   free(stack_x->data);
   free(stack_x);
@@ -61,6 +60,7 @@ void Cut(Node* dummy_head, int x, int y) {
   int i, j;
   Node* stack_x = dummy_head->next;
 
+  /*---find stack_x---*/
   i = 1;
   while (i < x) {
     stack_x = stack_x->next;
@@ -72,11 +72,12 @@ void Cut(Node* dummy_head, int x, int y) {
   Node* new_node = (Node*)malloc(sizeof(Node));
   int* data_x = (int*)malloc(sizeof(int) * y);
   int* data_new = (int*)malloc(sizeof(int) * (stack_x->size - y));
+  /*---divide data for the new node---*/
   for (i = 0; i < y; i++) data_x[i] = stack_x->data[i];
   for (j = 0; i < stack_x->size; j++, i++) data_new[j] = stack_x->data[i];
   new_node->data = data_new;
   new_node->size = stack_x->size - y;
-
+  /*---stack_x takes y, and new node takes (all - y)---*/
   stack_x->data = data_x;
   stack_x->size = y;
   if (stack_x->next == NULL) {
