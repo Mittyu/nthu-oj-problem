@@ -32,7 +32,7 @@ Node* ConstructSyntaxTree(Node* Parent) {
       break;
     default:
       root->tokentype = ID;
-      scanf("%d", &root->ID);      
+      scanf("%d", &root->ID);  // remember ID would not be one digit.
       root->left = root->right = NULL;
       var[root->ID] = root;
       getchar();  // for ']'
