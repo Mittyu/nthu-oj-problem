@@ -1,4 +1,3 @@
-#define UNSET 0
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,7 +5,7 @@ typedef enum token { NUM, ADD, SUB, MUL } TokenType;
 
 typedef struct node {
   TokenType type;
-  int val;
+  int val, size;
   struct node *left, *right, *parent;
 } Node;
 
@@ -22,41 +21,53 @@ Node* BuildSyntaxTree(Node* Parent) {
       root->type = ADD;
       root->left = BuildSyntaxTree(root);
       root->right = BuildSyntaxTree(root);
+      root->size = root->left->size + root->right->size + 1;
       root->val = root->left->val + root->right->val;
       break;
     case '-':
       root->type = SUB;
       root->left = BuildSyntaxTree(root);
       root->right = BuildSyntaxTree(root);
+      root->size = root->left->size + root->right->size + 1;
       root->val = root->left->val - root->right->val;
       break;
     case '*':
       root->type = MUL;
       root->left = BuildSyntaxTree(root);
       root->right = BuildSyntaxTree(root);
+      root->size = root->left->size + root->right->size + 1;
       root->val = root->left->val * root->right->val;
       break;
     default:
       root->type = NUM;
       root->left = root->right = NULL;
+      root->size = 1;
       root->val = input - '0';
       break;
   }
+  root->val %= 10007;
   return root;
 }
-void FindValAt(int a) { printf("%d\n", nodeArr[a]->val % 10007); }
+void FindValAt(Node* root, int a) {
+  if (a == 1)
+    printf("%d\n", root->val);
+  else if (a - 1 <= root->left->size)
+    FindValAt(root->left, a - 1);
+  else
+    FindValAt(root->right, a - root->left->size - 1);
+}
 void Travel() {
   Node* tmp;
   for (int i = 1; i <= len; i++) {
     tmp = nodeArr[i];
     if (tmp->type == NUM)
-      printf("[i, %d]: %d ", tmp->val, tmp->val);
+      printf("[%d, %d]: %d ", tmp->val, tmp->size, tmp->val);
     else if (tmp->type == MUL)
-      printf("[i, %d]: *  ", tmp->val);
+      printf("[%d, %d]: *  ", tmp->val, tmp->size);
     else if (tmp->type == ADD)
-      printf("[i, %d]: +  ", tmp->val);
+      printf("[%d, %d]: +  ", tmp->val, tmp->size);
     else if (tmp->type == SUB)
-      printf("[i, %d]: -  ", tmp->val);
+      printf("[%d, %d]: -  ", tmp->val, tmp->size);
   }
 }
 void UpdateIdx(int a, int b) {
@@ -72,19 +83,22 @@ void UpdateVal(Node* root) {
   switch (root->type) {
     case ADD:
       value = root->left->val + root->right->val;
+      root->size = root->left->size + root->right->size + 1;
       break;
     case SUB:
       value = root->left->val - root->right->val;
+      root->size = root->left->size + root->right->size + 1;
       break;
     case MUL:
       value = root->left->val * root->right->val;
+      root->size = root->left->size + root->right->size + 1;
       break;
     default:
       value = root->val;
       break;
   }
   if (value != root->val) {
-    root->val = value;
+    root->val = value % 10007;
     UpdateVal(root->parent);
   }
 }
@@ -112,23 +126,23 @@ int main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
 #endif
-
+  // Node* root = NULL;
   int N, input_a, input_b;
   char instruction;
   scanf(" %d\n", &N);
   nodeArr[0] = BuildSyntaxTree(NULL);
-  // Travel();
-  // printf("\n");
+  Travel();
+  printf("\n");
   while (N--) {
     scanf(" %c", &instruction);
     if (instruction == 'Q') {
       scanf(" %d", &input_a);
-      FindValAt(input_a);
+      FindValAt(nodeArr[0], input_a);
     } else if (instruction == 'D') {
       scanf(" %d %d", &input_a, &input_b);
       DeleteSubTreeAt(input_a, input_b);
-      // Travel();
-      // printf("\n");
+      Travel();
+      printf("\n");
     }
   }
 
