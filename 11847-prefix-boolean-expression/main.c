@@ -1,4 +1,5 @@
 #define MAX_LEN 32
+/*---nameing a,b,c,d value is the key---*/ 
 #define A_VAL (idx>>3)%2
 #define B_VAL (idx>>2)%2
 #define C_VAL (idx>>1)%2

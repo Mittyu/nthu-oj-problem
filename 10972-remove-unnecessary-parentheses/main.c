@@ -19,9 +19,9 @@ Node* NewNode() {
 Node* FACTOR();
 Node* EXPR() {
   Node* right = FACTOR();
-
+  /*---------get the end of expression---------*/
   if(pos == -1 || dataBus[pos] == '(') return right;
-
+  
   Node* root = NewNode();
   root->right = right;
   root->left = EXPR();

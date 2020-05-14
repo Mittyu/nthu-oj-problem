@@ -17,6 +17,7 @@ int main() {
   int i;
   for (i = 0; i < n; i++) {
     scanf(" %d", &inorder[i]);
+    /*---USING A LOOKING TABLE TO SPEEDUP---*/
     lookingTable[inorder[i]] = i;
   }
   for (i = 0; i < n; i++) scanf(" %d", &preorder[i]);
@@ -34,11 +35,13 @@ int main() {
 }
 int pre_idx;
 void PostTree(int inorder_start, int inorder_end) {
+  /*---Normal Build tree---*/
   if (inorder_start > inorder_end) return;
   int i;
   i = lookingTable[preorder[pre_idx]];
   pre_idx++;
   PostTree(inorder_start, i - 1);
   PostTree(i + 1, inorder_end);
+  /*---just print---*/
   printf("%d ", inorder[i]);
 }

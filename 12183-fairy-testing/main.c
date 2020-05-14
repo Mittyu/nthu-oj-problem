@@ -10,14 +10,13 @@ typedef struct node {
   struct node *left, *right, *parent;
 } Node;
 
-int pos;
 Node* head;
 Node** var;  // store pointers points to Tree Nodes. EX, var[0] = Node ID = 0.
 
-Node* ConstructSyntaxTree(Node* Parent) {
+Node* ConstructSyntaxTree() {
   char input = getchar();
   Node* root = (Node*)calloc(1, sizeof(Node));
-  root->parent = Parent;
+  root->parent = NULL;
   root->val = 0;
   switch (input) {
     case '\n':
@@ -27,8 +26,10 @@ Node* ConstructSyntaxTree(Node* Parent) {
       if (input == '|') root->tokentype = OP_OR;
       else root->tokentype = OP_AND;
       root->ID = 0;
-      root->left = ConstructSyntaxTree(root);
-      root->right = ConstructSyntaxTree(root);
+      root->left = ConstructSyntaxTree();
+      root->left->parent = root;
+      root->right = ConstructSyntaxTree();
+      root->right->parent = root;
       break;
     default:
       root->tokentype = ID;
@@ -49,7 +50,7 @@ void check_up(Node* cur) {
   else if (cur->tokentype == OP_AND)
     ans = cur->left->val & cur->right->val;
 
-  if (ans ^ cur->val) {
+  if (ans ^ cur->val) { // xor
     cur->val = ans;
     check_up(cur->parent);
   }
@@ -73,11 +74,10 @@ int main() {
   while (T--) {
     scanf(" %d %d\n", &N, &M);
     var = (Node**)malloc(sizeof(Node*) * (N + 1));
-    pos = 1;  // initial var ID.
-    head = ConstructSyntaxTree(NULL);
+    head = ConstructSyntaxTree();
     while (M--) {
       scanf(" %d", &id);
-      var[id]->val = var[id]->val ^ 1;
+      var[id]->val = var[id]->val ^ 1; // 0->1, 1->0
       check_up(var[id]->parent);
       printf("%d\n", head->val);
     }
